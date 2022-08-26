@@ -1,0 +1,32 @@
+.Disable {
+    border: 2px solid red;
+}
+
+.done {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    background-color: red;
+    padding: .1rem;
+    z-index: 999;
+}
+
+.inpt-grb {
+    position: relative;
+}
+
+.remove {
+    position: absolute !important;
+    right: 0px;
+    border: none;
+    border-radius: 0;
+    height: 100%;
+}
+
+.change {
+    position: absolute !important;
+    right: 31px;
+    border: none;
+    border-radius: 0;
+    height: 100%;
+}
