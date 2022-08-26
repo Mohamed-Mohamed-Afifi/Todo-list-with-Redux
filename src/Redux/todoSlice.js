@@ -13,6 +13,9 @@ export const todoSlice = createSlice({
         clearTodo: (state, { payload }) => {
             console.log(payload)
             state.data = []
+        },
+        modifyTodo: (state, actions) => {
+            state.data[actions.payload.num] = actions.payload.newval
         }
     }
 })

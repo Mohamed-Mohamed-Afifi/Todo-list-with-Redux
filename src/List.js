@@ -12,39 +12,27 @@ const List = () => {
     const edt = useRef(null);
     let editToSave;
 
-    // const [btn, setEdit] = useState();
-    // const [dta, setData] = useState(true)
-    // let inputSelectedId;
     // const dispatch = useDispatch();
     let [count, setCount] = useState(0)
 
-    const changeStateOfItem = (e) => {
-        // editRef.current.classList;
-        e.target.classList.toggle("edit")
-        editToSave = e.target.classList.contains('edit');
+    const changeStateOfBtn = (e) => {
         e.target.textContent = editToSave ? "Edit" : "save"
         console.log(e.target.textContent)
-        // setEdit(editToSave ? "Save" : "Edit");
-        // setData(editToSave ? false : true)
-        // if (!editToSave) {
-        //     e.target.setAttribute('readOnly', 'true')
-        // }
+    }
+    const changeStateOfInput = (e) => {
         if (!editToSave) {
-
-            // e.target.parentElement.childNodes[1].classList.remove('Disable')
-            // e.target.parentElement.childNodes[1].classList.add('Enable')
             e.target.parentElement.childNodes[0].removeAttribute('readOnly')
-            // removeAttribute
-
         } else {
             e.target.parentElement.childNodes[0].setAttribute('readOnly', "")
-            // e.target.parentElement.childNodes[1].classList.remove('Enable')
-            // e.target.parentElement.childNodes[1].classList.add('Disable')
-            // dispatch(modifyTodo("hi"))
-
         }
-        // inputSelectedId = e.target.getAttribute('id');
-        // console.log(e.target.parentElement.childNodes[1].value)
+    }
+    const changeStateOfItem = (e) => {
+        e.target.classList.toggle("edit")
+        editToSave = e.target.classList.contains('edit');
+
+        changeStateOfBtn(e)
+
+        changeStateOfInput(e)
         console.log(list)
     }
     const finishTodo = (e) => {
